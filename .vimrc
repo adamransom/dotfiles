@@ -3,7 +3,7 @@ call pathogen#infect()
 "" General
 set background=dark
 colorscheme solarized
-set guifont=Menlo\ Regular:h12
+set guifont=Menlo\ Regular:h14
 set lsp=1
 set nocompatible                " choose no compatibility with legacy vi
 syntax enable
@@ -17,6 +17,7 @@ set guioptions=ac               " hide menu
 set vb                          " set visual bell -- I hate that damned beeping
 set stl=%f\ %m\ %r\ Line:\ %l/%L[%p%%]\ Col:\ %c\ Buf:\ #%n\ [%b][0x%B]
 set laststatus=2                " always show status line
+let mapleader=","
 " Make sure that unsaved buffers that are to be put in the background are 
 " allowed to go in there (ie. the "must save first" error doesn't come up)
 set hidden
@@ -38,3 +39,6 @@ nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 
 "" Java
 let java_highlight_functions="style"
+
+"" CommandT
+let g:CommandTMaxHeight=5
