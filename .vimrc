@@ -33,7 +33,7 @@ autocmd FileType java setlocal tabstop=4 shiftwidth=4 noexpandtab
 "" Searching
 set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
-set ignorecase                  " searches are case insensitive...
+set noignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 
