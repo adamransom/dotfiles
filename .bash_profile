@@ -14,7 +14,9 @@ function parse_git_branch
 }
 
 if [ $(tput colors) == "256" ]; then
-  PS1="\033[38;5;125m\w \033[0;34m\$(parse_git_branch) \033[0;0m"
+  PS1="\[\033[38;5;125m\]\w\[\033[0;34m\]\$(parse_git_branch) \[\033[0;0m\]\$ "
 else
-  PS1="\033[0;35m\w \033[0;34m\$(parse_git_branch) \033[0;0m"
+  PS1="\[\033[0;35m\]\w\[\033[0;34m\]\$(parse_git_branch) \[\033[0;0m\]\$ "
 fi
+
+set -o vi
