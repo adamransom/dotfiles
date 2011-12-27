@@ -36,6 +36,7 @@ set incsearch                   " incremental searching
 set noignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 "" Java
 let java_highlight_functions="style"
