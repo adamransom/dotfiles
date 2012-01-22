@@ -13,6 +13,7 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
 alias g="mvim --remote-silent"
+alias rspec="rspec --color --format progress"
 
 function parse_git_branch
 {
