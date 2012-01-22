@@ -12,4 +12,4 @@
 	url = https://github.com/tpope/vim-surround.git
 [submodule ".vim/bundle/xptemplate"]
 	path = .vim/bundle/xptemplate
-	url = https://github.com/drmingdrmer/xptemplate.git
+	url = git@github.com:adamransom/xptemplate.git
