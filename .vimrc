@@ -41,5 +41,16 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 "" Java
 let java_highlight_functions="style"
 
+"" Ruby
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+" Improve autocomplete menu color
+highlight Pmenu ctermbg=238 gui=bold
+
 "" CommandT
 let g:CommandTMaxHeight=5
+
+"" XPTemplate
+let g:xptemplate_key = '<Tab>'
