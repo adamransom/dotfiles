@@ -28,7 +28,7 @@ set tabstop=2 shiftwidth=2 softtabstop=2      " a tab is two spaces (or set this
 set expandtab                   " use spaces, not tabs (optional)
 set backspace=indent,eol,start  " backspace through everything in insert mode
 
-autocmd FileType java setlocal tabstop=4 shiftwidth=4 noexpandtab 
+autocmd FileType java setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab 
 
 "" Searching
 set hlsearch                    " highlight matches
