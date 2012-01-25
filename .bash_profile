@@ -17,9 +17,9 @@ alias rspec="rspec --color --format progress"
 
 function parse_git_branch
 {
-  branch=$(git branch 2> /dev/null | awk "{print \$2}")
+  branch=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')
   if [ "$branch" != "" ]; then
-    echo "(${branch})";
+    echo "${branch}";
   fi
 }
 
