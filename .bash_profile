@@ -1,5 +1,4 @@
 # set path variables
-export PATH=/opt/subversion/bin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=$PATH:~/android-sdk-macosx/tools/:~/android-sdk-macosx/platform-tools/
 export PATH=$PATH:~/bin
@@ -20,6 +19,20 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 alias g="mvim --remote-silent"
 alias rspec="rspec --color --format progress"
 alias ls="ls -G"
+alias ll="ls -al"
+alias ..="cd .."
+
+# quick googling from command line
+function goo()
+{
+  open "`echo \"http://www.google.com/search?q="$@"\"`"
+}
+
+# git aliases
+alias gs="git status"
+alias gss="git status -s"
+alias gc="git commit -m"
+alias gca="git commit -a -m"
 
 # extract current git branch
 function parse_git_branch
