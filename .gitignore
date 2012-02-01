@@ -2,3 +2,4 @@
 *.gitconfig
 *.swp
 *.DS_STORE
+*.netrwhist
