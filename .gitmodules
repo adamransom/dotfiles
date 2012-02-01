@@ -13,3 +13,6 @@
 [submodule ".vim/bundle/xptemplate"]
 	path = .vim/bundle/xptemplate
 	url = git@github.com:adamransom/xptemplate.git
+[submodule ".vim/bundle/ack-vim"]
+	path = .vim/bundle/ack-vim
+	url = https://github.com/mileszs/ack.vim.git
