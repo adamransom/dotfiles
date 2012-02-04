@@ -21,7 +21,11 @@ alias rspec="rspec --color --format progress"
 alias ls="ls -G"
 alias ll="ls -al"
 alias ..="cd .."
-alias prj="cd ~/projects"
+
+function prj()
+{
+  cd ~/projects/"$1"
+}
 
 # quick googling from command line
 function goo()
