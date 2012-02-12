@@ -54,3 +54,5 @@ let g:CommandTMaxHeight=5
 
 "" XPTemplate
 let g:xptemplate_key = '<Tab>'
+
+set backupdir=~/.vimtmp,~/tmp,/var/tmp
