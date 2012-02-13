@@ -1,4 +1,5 @@
 # set path variables
+export PATH=/usr/local/bin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=$PATH:~/android-sdk-macosx/tools/:~/android-sdk-macosx/platform-tools/
 export PATH=$PATH:~/bin
