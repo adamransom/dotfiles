@@ -38,6 +38,8 @@ set smartcase                   " ... unless they contain at least one capital l
 nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
+set tags=tags
+
 "" Java
 let java_highlight_functions="style"
 
