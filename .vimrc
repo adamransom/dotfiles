@@ -58,3 +58,4 @@ let g:CommandTMaxHeight=5
 let g:xptemplate_key = '<Tab>'
 
 set backupdir=~/.vimtmp,~/tmp,/var/tmp
+cabbr <expr> %% expand('%:p:h%')
