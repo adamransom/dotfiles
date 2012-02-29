@@ -1,4 +1,5 @@
 call pathogen#infect()
+runtime macros/matchit.vim
 
 "" General
 set background=dark
