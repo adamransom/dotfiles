@@ -1,4 +1,5 @@
 call pathogen#infect()
+runtime macros/matchit.vim
 
 " -- General --
 set nocompatible                " choose no compatibility with legacy vi
@@ -48,6 +49,9 @@ augroup AutoReloadVimRC
 augroup END
 noremap <Leader>v :e $MYVIMRC<CR>
 
+" -- ctags --
+set tags=tags
+
 " -- Mappings --
 let mapleader=","
 
@@ -66,6 +70,8 @@ nmap <Leader>O O<Esc>j
 inoremap jj <Esc>
 inoremap kj <Esc>
 inoremap jk <Esc>
+" Easy to a edit file in same directory
+cabbr <expr> %% expand('%:p:h%')
 
 " -- CommandT --
 let g:CommandTMaxHeight=5
