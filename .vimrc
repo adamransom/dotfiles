@@ -7,6 +7,7 @@ set showcmd                     " display incomplete commands
 set autoread                    " automatically reload a file when its changed outside vim
 set encoding=utf-8
 set vb                          " set visual bell
+let g:loaded_netrwPlugin = 1    " stop loading directory browser
 
 " -- Display --
 set background=light
