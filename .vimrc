@@ -9,7 +9,7 @@ set encoding=utf-8
 set vb                          " set visual bell
 
 " -- Display --
-set background=dark
+set background=light
 colorscheme solarized
 set guifont=Menlo\ Regular:h14
 set lsp=1                       " set a bit extra linespace for readability
