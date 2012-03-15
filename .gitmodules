@@ -34,3 +34,9 @@
 [submodule ".vim/bundle/ruby-matchit"]
 	path = .vim/bundle/ruby-matchit
 	url = https://github.com/vim-scripts/ruby-matchit.git
+[submodule ".vim/bundle/tslime.vim"]
+	path = .vim/bundle/tslime.vim
+	url = https://github.com/jgdavey/tslime.vim.git
+[submodule ".vim/bundle/vim-turbux"]
+	path = .vim/bundle/vim-turbux
+	url = https://github.com/jgdavey/vim-turbux.git
