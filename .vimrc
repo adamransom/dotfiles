@@ -8,6 +8,7 @@ set autoread                    " automatically reload a file when its changed o
 set encoding=utf-8
 set vb                          " set visual bell
 let g:loaded_netrwPlugin = 1    " stop loading directory browser
+set hidden                      " allowed unsaved buffers to go into background
 
 " -- Display --
 set background=light
@@ -16,7 +17,6 @@ set guifont=Menlo\ Regular:h14
 set lsp=1                       " set a bit extra linespace for readability
 syntax enable                   " of course we want syntax highlighting
 filetype plugin indent on       " load file type plugins + indentation
-set hidden                      " allowed unsaved buffers to go into background
 
 " -- MacVim --
 set guioptions=ac               " hide menu
