@@ -80,6 +80,11 @@ let g:CommandTMaxHeight=5
 " -- XPTemplate --
 let g:xptemplate_key = '<Tab>'
 
+" -- Turbux --
+let g:no_turbux_mappings=1
+nmap <Leader>r <Plug>SendTestToTmux
+nmap <Leader>R <Plug>SendFocusedTestToTmux
+
 " == Language Specific ==
 
 " -- Java --
