@@ -18,6 +18,7 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 
 # set up aliases
 alias g="mvim --remote-silent"
+alias v="mvim -v"
 alias rspec="rspec --color --format progress"
 alias ls="ls -G"
 alias ll="ls -al"
