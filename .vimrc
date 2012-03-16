@@ -64,9 +64,6 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 noremap <Leader><Leader> <C-^>
 " Make Y behave as you would expect
 map Y y$
-" Insert blank lines without entering insert mode
-nmap <Leader>o o<Esc>k
-nmap <Leader>O O<Esc>j
 " Smash escape
 inoremap jj <Esc>`^
 inoremap kj <Esc>`^
