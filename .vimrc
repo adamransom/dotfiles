@@ -77,6 +77,7 @@ if &term =~ "xterm" || &term =~ "screen"
   let g:CommandTSelectNextMap = ['<Esc>OB']
   let g:CommandTSelectPrevMap = ['<Esc>OA']
 endif
+nmap <silent> <Leader>gt :CommandTBuffer<CR>
 
 " -- XPTemplate --
 let g:xptemplate_key = '<Tab>'
