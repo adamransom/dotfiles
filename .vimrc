@@ -43,6 +43,9 @@ set incsearch                   " incremental searching
 set noignorecase                " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
+" -- Mappings --
+let mapleader=","
+
 " -- .vimrc --
 augroup AutoReloadVimRC
   au!
@@ -52,9 +55,6 @@ noremap <Leader>v :e $MYVIMRC<CR>
 
 " -- ctags --
 set tags=tags
-
-" -- Mappings --
-let mapleader=","
 
 " Clear hlsearch with Enter
 nnoremap <silent> <Enter> :nohlsearch<CR>
