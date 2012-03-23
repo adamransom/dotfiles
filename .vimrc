@@ -66,7 +66,6 @@ noremap <Leader><Leader> <C-^>
 map Y y$
 " Smash escape
 inoremap jj <Esc>`^
-inoremap kj <Esc>`^
 inoremap jk <Esc>`^
 " Easy to a edit file in same directory
 cabbr <expr> %% expand('%:p:h%')
