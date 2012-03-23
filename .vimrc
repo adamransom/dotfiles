@@ -72,7 +72,7 @@ cabbr <expr> %% expand('%:p:h%')
 
 " -- CommandT --
 let g:CommandTMaxHeight=5
-if &term =~ "xterm" || &term =~ "screen"
+if &term =~ "screen"
   let g:CommandTSelectNextMap = ['<Esc>OB']
   let g:CommandTSelectPrevMap = ['<Esc>OA']
 endif
