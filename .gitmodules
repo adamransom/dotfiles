@@ -49,3 +49,6 @@
 [submodule ".vim/bundle/vim-repeat"]
 	path = .vim/bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = git@github.com:adamransom/oh-my-zsh.git
