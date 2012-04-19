@@ -72,6 +72,8 @@ inoremap jj <Esc>`^
 inoremap jk <Esc>`^
 " Easy to a edit file in same directory
 cabbr <expr> %% expand('%:p:h%')
+" Insert a hash rocket with <c-l>
+imap <c-l> <space>=><space>
 
 " -- CommandT --
 let g:CommandTMaxHeight=5
