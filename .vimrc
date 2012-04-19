@@ -43,6 +43,9 @@ set incsearch                   " incremental searching
 set noignorecase                " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
+" -- Customize Colors --
+highlight MatchParen cterm=bold ctermbg=none ctermfg=red
+
 " -- Mappings --
 let mapleader=","
 
