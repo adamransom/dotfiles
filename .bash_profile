@@ -27,7 +27,11 @@ alias ..="cd .."
 
 function prj()
 {
-  cd ~/projects/"$1"
+  if [ ! -n "$1" ]; then
+    cd ~/projects/ppprails/src
+  else
+    cd ~/projects/"$1"
+  fi
 }
 
 # quick googling from command line
