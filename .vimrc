@@ -82,7 +82,7 @@ if &term =~ "screen"
   let g:CommandTSelectPrevMap = ['<Esc>OA']
 endif
 nmap <silent> <Leader>t :CommandTFlush<CR>\|:CommandT<CR>
-nmap <silent> <Leader>gt :CommandTFlush<CR>\|:CommandTBuffer<CR>
+nmap <silent> <Leader>gt :CommandTBuffer<CR>
 
 " -- XPTemplate --
 let g:xptemplate_key = '<Tab>'
