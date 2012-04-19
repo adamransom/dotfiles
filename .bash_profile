@@ -46,6 +46,12 @@ alias gss="git status -s"
 alias gc="git commit -m"
 alias gca="git commit -a -m"
 
+# bash history stuff
+export HISTTIMEFORMAT='%F %T '
+export HISTFILESIZE=1000
+# Don't overwrite histories from different sessions
+shopt -s histappend
+
 # extract current git branch
 function parse_git_branch
 {
