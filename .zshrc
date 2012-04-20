@@ -5,15 +5,17 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="adamransom"
 
 # Aliases
-source ~/.aliases.sh
+source $HOME/.aliases.sh
+alias zshconf="mvim -v $HOME/.zshrc"
+alias zshsource="source $HOME/.zshrc"
 
 # Navigate to current project easily
 function prj()
 {
   if [ ! -n "$1" ]; then
-    cd ~/projects/ppprails/src
+    cd $HOME/projects/ppprails/src
   else
-    cd ~/projects/"$1"
+    cd $HOME/projects/"$1"
   fi
 }
 
