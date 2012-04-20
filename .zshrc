@@ -9,13 +9,14 @@ source $HOME/.aliases.sh
 alias zshconf="mvim -v $HOME/.zshrc"
 alias zshsource="source $HOME/.zshrc"
 
+PROJECTS_ROOT="$HOME/Documents"
 # Navigate to current project easily
 function prj()
 {
   if [ ! -n "$1" ]; then
-    cd $HOME/projects/ppprails/src
+    cd "$PROJECTS_ROOT"/"$PROJECTS_CUR"
   else
-    cd $HOME/projects/"$1"
+    cd "$PROJECTS_ROOT"/"$1"
   fi
 }
 
@@ -27,3 +28,6 @@ plugins=(git)
 
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+
+# Load local configurations
+test -f $HOME/.zshrc.local && source $HOME/.zshrc.local
