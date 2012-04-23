@@ -1,57 +1,57 @@
-[submodule ".vim/bundle/vim-coffee-script"]
-	path = .vim/bundle/vim-coffee-script
+[submodule "vim/bundle/vim-coffee-script"]
+	path = vim/bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule ".vim/bundle/vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
+[submodule "vim/bundle/vim-colors-solarized"]
+	path = vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule ".vim/bundle/vim-rails"]
-	path = .vim/bundle/vim-rails
+[submodule "vim/bundle/vim-rails"]
+	path = vim/bundle/vim-rails
 	url = https://github.com/tpope/vim-rails.git
-[submodule ".vim/bundle/vim-surround"]
-	path = .vim/bundle/vim-surround
+[submodule "vim/bundle/vim-surround"]
+	path = vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule ".vim/bundle/xptemplate"]
-	path = .vim/bundle/xptemplate
+[submodule "vim/bundle/xptemplate"]
+	path = vim/bundle/xptemplate
 	url = git@github.com:adamransom/xptemplate.git
-[submodule ".vim/bundle/ack-vim"]
-	path = .vim/bundle/ack-vim
+[submodule "vim/bundle/ack-vim"]
+	path = vim/bundle/ack-vim
 	url = https://github.com/mileszs/ack.vim.git
-[submodule ".vim/bundle/zencoding-vim"]
-	path = .vim/bundle/zencoding-vim
+[submodule "vim/bundle/zencoding-vim"]
+	path = vim/bundle/zencoding-vim
 	url = https://github.com/mattn/zencoding-vim.git
-[submodule ".vim/bundle/bufkill"]
-	path = .vim/bundle/bufkill
+[submodule "vim/bundle/bufkill"]
+	path = vim/bundle/bufkill
 	url = https://github.com/vim-scripts/bufkill.vim.git
-[submodule ".vim/bundle/camelcasemotion"]
-	path = .vim/bundle/camelcasemotion
+[submodule "vim/bundle/camelcasemotion"]
+	path = vim/bundle/camelcasemotion
 	url = https://github.com/vim-scripts/camelcasemotion.git
-[submodule ".vim/bundle/vim-textobj-rubyblock"]
-	path = .vim/bundle/vim-textobj-rubyblock
+[submodule "vim/bundle/vim-textobj-rubyblock"]
+	path = vim/bundle/vim-textobj-rubyblock
 	url = https://github.com/nelstrom/vim-textobj-rubyblock.git
-[submodule ".vim/bundle/vim-textobj-user"]
-	path = .vim/bundle/vim-textobj-user
+[submodule "vim/bundle/vim-textobj-user"]
+	path = vim/bundle/vim-textobj-user
 	url = https://github.com/kana/vim-textobj-user.git
-[submodule ".vim/bundle/ruby-matchit"]
-	path = .vim/bundle/ruby-matchit
+[submodule "vim/bundle/ruby-matchit"]
+	path = vim/bundle/ruby-matchit
 	url = https://github.com/vim-scripts/ruby-matchit.git
-[submodule ".vim/bundle/tslime.vim"]
-	path = .vim/bundle/tslime.vim
+[submodule "vim/bundle/tslime.vim"]
+	path = vim/bundle/tslime.vim
 	url = https://github.com/jgdavey/tslime.vim.git
-[submodule ".vim/bundle/vim-turbux"]
-	path = .vim/bundle/vim-turbux
+[submodule "vim/bundle/vim-turbux"]
+	path = vim/bundle/vim-turbux
 	url = https://github.com/jgdavey/vim-turbux.git
-[submodule ".vim/bundle/vim-unimpaired"]
-	path = .vim/bundle/vim-unimpaired
+[submodule "vim/bundle/vim-unimpaired"]
+	path = vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
-[submodule ".vim/bundle/autotag"]
-	path = .vim/bundle/autotag
+[submodule "vim/bundle/autotag"]
+	path = vim/bundle/autotag
 	url = https://github.com/vim-scripts/AutoTag.git
-[submodule ".vim/bundle/vim-repeat"]
-	path = .vim/bundle/vim-repeat
+[submodule "vim/bundle/vim-repeat"]
+	path = vim/bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = git@github.com:adamransom/oh-my-zsh.git
-[submodule ".vim/bundle/vim-eunuch"]
-	path = .vim/bundle/vim-eunuch
+[submodule "vim/bundle/vim-eunuch"]
+	path = vim/bundle/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch.git
