@@ -106,3 +106,8 @@ highlight Pmenu ctermbg=238 gui=bold
 
 set backupdir=~/.vimtmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vimtmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
+" -- Local Overrides
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
