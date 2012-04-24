@@ -33,6 +33,8 @@ function prj()
   fi
 }
 
+# LS colors
+export LSCOLORS=exfxcxdxbxegedabagacad
 
 # Load local configurations
 test -f $HOME/.zshrc.local && source $HOME/.zshrc.local
