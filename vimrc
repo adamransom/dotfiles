@@ -25,7 +25,8 @@ set guioptions=ac               " hide menu
 set ch=2                        " Make command line two lines high
 set stl=%f\ %m\ %r\ Line:\ %l/%L[%p%%]\ Col:\ %c\ Buf:\ #%n\ [%b][0x%B]
 set laststatus=2                " always show status line
-set cursorline
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
 
 " -- Whitespace --
 set nowrap                                    " don't wrap lines
