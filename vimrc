@@ -87,6 +87,8 @@ cabbr <expr> %% expand('%:p:h%')
 imap <c-l> <space>=><space>
 " Toggle invisible characters
 nnoremap <silent> <Leader>l :set list!<CR>
+" Quickly duplicate line
+nnoremap <C-j> yyp
 
 " -- CommandT --
 let g:CommandTMaxHeight=5
