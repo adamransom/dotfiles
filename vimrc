@@ -85,6 +85,8 @@ inoremap jk <Esc>`^
 cabbr <expr> %% expand('%:p:h%')
 " Insert a hash rocket with <c-l>
 imap <c-l> <space>=><space>
+" Toggle invisible characters
+nnoremap <silent> <Leader>l :set list!<CR>
 
 " -- CommandT --
 let g:CommandTMaxHeight=5
