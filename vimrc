@@ -23,7 +23,14 @@ set guioptions=ac               " hide menu
 
 " -- Command & Status
 set ch=2                        " Make command line two lines high
-set stl=%f\ %m\ %r\ Line:\ %l/%L[%p%%]\ Col:\ %c\ Buf:\ #%n\ [%b][0x%B]
+set stl=%{&readonly?'⭤\ ':''} " Lock symbol if read only
+set stl+=%f                     " Full filepath
+set stl+=%(\ %m%)               " Unsaved changes or not
+set stl+=\ [%{strlen(&ft)?&ft:'none'},\ %{strlen(&fenc)?&fenc:&enc}] " Filetype and encoding
+set stl+=%=                     " Send the rest to the right
+set stl+=Line:\ %l/%L[%p%%]\ Col:\ %c " Line and column numbers
+set stl+=\ Buf:\ #%n            " Buffer number
+set stl+=\ [%b][0x%B]           " ASCII and HEX character code
 set laststatus=2                " always show status line
 set cursorline
 autocmd WinEnter * setlocal cursorline
@@ -47,6 +54,8 @@ set smartcase                   " ... unless they contain at least one capital l
 
 " -- Customize Colors --
 highlight MatchParen cterm=bold ctermbg=none ctermfg=red
+"highlight StatusLine cterm=none
+"highlight StatusLineNC cterm=none
 
 " -- Mappings --
 let mapleader=","
