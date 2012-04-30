@@ -12,7 +12,7 @@
 	url = https://github.com/tpope/vim-surround.git
 [submodule "vim/bundle/xptemplate"]
 	path = vim/bundle/xptemplate
-	url = git@github.com:adamransom/xptemplate.git
+	url = git://github.com/adamransom/xptemplate.git
 [submodule "vim/bundle/ack-vim"]
 	path = vim/bundle/ack-vim
 	url = https://github.com/mileszs/ack.vim.git
@@ -51,7 +51,7 @@
 	url = https://github.com/tpope/vim-repeat.git
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
-	url = git@github.com:adamransom/oh-my-zsh.git
+	url = git://github.com/adamransom/oh-my-zsh.git
 [submodule "vim/bundle/vim-eunuch"]
 	path = vim/bundle/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch.git
