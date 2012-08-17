@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'rake'
 
 FG_GREEN="\033[32m"
