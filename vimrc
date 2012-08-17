@@ -24,7 +24,7 @@ set guioptions=ac               " hide menu
 
 " -- Command & Status
 set ch=2                        " Make command line two lines high
-set stl=%{&readonly?'⭤\ ':''} " Lock symbol if read only
+set stl=%{&readonly?'✘\ ':''}     " Lock symbol if read only
 set stl+=%f                     " Full filepath
 set stl+=%(\ %m%)               " Unsaved changes or not
 set stl+=\ [%{strlen(&ft)?&ft:'none'},\ %{strlen(&fenc)?&fenc:&enc}] " Filetype and encoding
