@@ -17,7 +17,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 source $HOME/.aliases.sh
-alias zshconf="mvim -v $HOME/.zshrc"
+alias zshconf="vim $HOME/.zshrc"
 alias zshsource="source $HOME/.zshrc"
 
 # Override this in .zshrc.local

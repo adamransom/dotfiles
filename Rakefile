@@ -15,7 +15,7 @@ end
 task :install_zsh do |t|
   part = 'zsh'
   if confirm?(part)
-    install_files(%w[oh-my-zsh zshrc aliases.sh])
+    install_files(%w[oh-my-zsh zshrc zshenv aliases.sh])
   end
 end
 
