@@ -94,6 +94,7 @@ nnoremap <C-j> yyp
 " -- CommandT --
 let g:CommandTMaxHeight=5
 if &term =~ "screen"
+  let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
   let g:CommandTSelectNextMap = ['<Esc>OB']
   let g:CommandTSelectPrevMap = ['<Esc>OA']
 endif
