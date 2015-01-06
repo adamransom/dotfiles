@@ -50,7 +50,7 @@ set showbreak=↪
 " -- Searching --
 set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
-set noignorecase                " searches are case insensitive...
+set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
 " -- Customize Colors --
