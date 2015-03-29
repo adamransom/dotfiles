@@ -6,7 +6,7 @@ FG_RED="\033[31m"
 RESET="\033[0m"
 
 #task :default => [:unfinished]
-task :default => [:install_zsh, :install_tmux, :install_bash, :install_vim, :install_git, :submodules]
+task :default => [:install_zsh, :install_tmux, :install_vim, :install_git, :submodules]
 
 task :unfinished do |t|
   puts "#{red('✘')} Still a work-in-progress. Come back later..."
@@ -25,13 +25,6 @@ task :install_tmux do |t|
   part = 'tmux'
   if confirm?(part)
     install_files(%w[tmux.conf])
-  end
-end
-
-task :install_bash do |t|
-  part = 'bash'
-  if confirm?(part)
-    install_files(%w[bash_profile inputrc aliases.sh])
   end
 end
 
