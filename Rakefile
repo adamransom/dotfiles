@@ -15,7 +15,9 @@ end
 task :install_zsh do |t|
   part = 'zsh'
   if confirm?(part)
-    install_files(%w[oh-my-zsh zshrc zshenv aliases.sh])
+    system(%Q{git clone --recursive git@github.com:sorin-ionescu/prezto.git zprezto})
+    install_files(%w[zprezto zshrc zshenv zpreztorc])
+    system %Q{ln -s "$PWD/prezto_theme" "$PWD/zprezto/modules/prompt/functions/prompt_adam_setup"}
   end
 end
 

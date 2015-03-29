@@ -1,40 +1,24 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
 
-# Set name of the theme to load.
-ZSH_THEME="adamransom"
+# General Aliases
+alias v="mvim -v"
+alias g="mvim --remote-silent"
+alias zc="$EDITOR $HOME/.zshrc"
+alias zs="source $HOME/.zshrc"
+alias l="la" # overwrite prezto default
 
-# Disable autosetting terminal title.
-DISABLE_AUTO_TITLE="true"
+# Git Aliases
+alias gs="git status" # overwrite prezto default
+alias gl="git l" # overwrite prezto default
 
-# Load plugins
-plugins=(git)
-
-# Load oh-my-zsh
-source $ZSH/oh-my-zsh.sh
-
-# -- Custom Stuff -- #
-
-# Aliases
-source $HOME/.aliases.sh
-alias zshconf="vim $HOME/.zshrc"
-alias zshsource="source $HOME/.zshrc"
-
-# Override this in .zshrc.local
-PROJECTS_ROOT="$HOME/Documents"
-
-# Navigate to current project easily
-function prj()
-{
-  if [ ! -n "$1" ]; then
-    cd "$PROJECTS_ROOT"/"$PROJECTS_CUR"
-  else
-    cd "$PROJECTS_ROOT"/"$1"
-  fi
-}
-
-# LS colors
+# Exports
 export LSCOLORS=exfxcxdxbxegedabagacad
+
+# Options
+unsetopt CORRECT # no autocorrect thanks
 
 # Load local configurations
 test -f $HOME/.zshrc.local && source $HOME/.zshrc.local

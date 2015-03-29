@@ -1,0 +1,30 @@
+function _collapse_pwd {
+  echo $(pwd | sed -e "s,^$HOME,~,")
+}
+
+function prompt_adam_precmd {
+  git-info
+}
+
+function prompt_adam_setup {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+  prompt_opts=(cr percent subst)
+  # Load required functions.
+  autoload -Uz add-zsh-hook
+  # Add hook for calling git-info before each command.
+  add-zsh-hook precmd prompt_adam_precmd
+  # Set git-info parameters.
+  zstyle ':prezto:module:git:info' verbose 'yes'
+  zstyle ':prezto:module:git:info:branch' format '%F{blue}%{$terminfo[bold]%}%b%f'
+  zstyle ':prezto:module:git:info:clean' format '%b%F{green}✔%f'
+  zstyle ':prezto:module:git:info:dirty' format '%b%F{red}✗%f'
+  zstyle ':prezto:module:git:info:keys' format 'prompt' '%F{green}%{$terminfo[bold]%} on%f %b %C%D'
+
+  PROMPT='
+%F{yellow}$(_collapse_pwd)%f${(e)git_info[prompt]}
+%b%F{blue}➜%f '
+  RPROMPT=''
+}
+
+prompt_adam_setup "$@"
