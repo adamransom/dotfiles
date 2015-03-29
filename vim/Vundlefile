@@ -1,0 +1,24 @@
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-surround'
+Plugin 'mileszs/ack.vim'
+Plugin 'vim-scripts/bufkill.vim'
+Plugin 'vim-scripts/camelcasemotion'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'kana/vim-textobj-user'
+Plugin 'vim-scripts/ruby-matchit'
+Plugin 'jgdavey/tslime.vim'
+Plugin 'jgdavey/vim-turbux'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-eunuch'
+Plugin 'juvenn/mustache.vim'
+Plugin 'wincent/command-t'
+Plugin 'godlygeek/tabular'
+Plugin 'SirVer/ultisnips'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'derekwyatt/vim-fswitch'
+
+call vundle#end()

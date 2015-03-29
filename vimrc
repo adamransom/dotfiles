@@ -1,7 +1,13 @@
+set nocompatible " choose no compatibility with legacy vi
+filetype off     " required for Vundle
+
+if filereadable(expand("~/.vim/Vundlefile"))
+  source ~/.vim/Vundlefile
+endif
+
 runtime macros/matchit.vim
 
 " -- General --
-set nocompatible                " choose no compatibility with legacy vi
 set showcmd                     " display incomplete commands
 set autoread                    " automatically reload a file when its changed outside vim
 set encoding=utf-8
