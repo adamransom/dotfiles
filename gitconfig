@@ -1,0 +1,14 @@
+[diff]
+[color]
+    ui = auto
+[alias]
+    ci = commit --verbose
+    co = checkout
+    di = diff
+    dc = diff --cached
+    amend = commit --amend
+    pom = push origin master
+    l = "!. ~/.githelpers && pretty_git_log"
+
+[merge]
+    tool = vimdiff

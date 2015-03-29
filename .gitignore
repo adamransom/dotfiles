@@ -1,6 +1,5 @@
 zprezto
 .vim/session*
-*.gitconfig
 *.swp
 *.DS_STORE
 *.netrwhist
