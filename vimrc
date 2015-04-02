@@ -31,8 +31,8 @@ set guioptions=ac               " hide menu
 
 " -- Command & Status
 set ch=2                        " Make command line two lines high
-set stl=%{&readonly?'✘\ ':''}     " Lock symbol if read only
-set stl+=%f                     " Full filepath
+set stl=%{&readonly?'✘\ ':''}   " Lock symbol if read only
+set stl+=%{expand('%:.')}       " Full filepath
 set stl+=%(\ %m%)               " Unsaved changes or not
 set stl+=\ [%{strlen(&ft)?&ft:'none'},\ %{strlen(&fenc)?&fenc:&enc}] " Filetype and encoding
 set stl+=%=                     " Send the rest to the right
@@ -57,10 +57,17 @@ set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
+set complete=.,w,b,t
+set number
+set ambiwidth=double
+
+set wildignore+=tmp/**
+set wildignore+=**/.git/*
+set wildignore+=*.xcodeproj/*
+set wildignore+=*.xcworkspace/*
+
 " -- Customize Colors --
-highlight MatchParen cterm=bold ctermbg=none ctermfg=red
-"highlight StatusLine cterm=none
-"highlight StatusLineNC cterm=none
+highlight MatchParen gui=bold guibg=NONE guifg=red cterm=bold ctermbg=NONE ctermfg=red
 let g:cpp_class_scope_highlight = 1
 
 " -- Mappings --
@@ -72,9 +79,6 @@ augroup AutoReloadVimRC
   au BufWritePost $MYVIMRC so $MYVIMRC
 augroup END
 noremap <Leader>v :e $MYVIMRC<CR>
-
-" -- ctags --
-set tags=tags
 
 " Clear hlsearch with Enter
 nnoremap <silent> <Enter> :nohlsearch<CR>
@@ -103,7 +107,7 @@ if &term =~ "screen"
   let g:CommandTSelectNextMap = ['<Esc>OB']
   let g:CommandTSelectPrevMap = ['<Esc>OA']
 endif
-nmap <silent> <Leader>t :CommandTFlush<CR>\|:CommandT<CR>
+nmap <silent> <Leader>t :CommandT<CR>
 nmap <silent> <Leader>gt :CommandTBuffer<CR>
 
 " -- UltiSnips --
@@ -116,28 +120,15 @@ let g:no_turbux_mappings=1
 nmap <Leader>r <Plug>SendTestToTmux
 nmap <Leader>R <Plug>SendFocusedTestToTmux
 
-" == Language Specific ==
-
 " -- Java --
 let java_highlight_functions="style"
 
-" -- Ruby --
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-highlight Pmenu ctermbg=238 gui=bold
 let loaded_matchparen = 1 " turn off matchparen for speed
 
 set backupdir=~/.vimtmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vimtmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 nnoremap <silent> <Leader>cf :!~/cppformat %<CR>
-
-" -- Local Overrides
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
-endif
 
 " -- Global Functions
 
@@ -148,3 +139,8 @@ endfunction
 function! MyName()
   return "Adam Ransom"
 endfunction
+
+" -- Local Overrides
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
