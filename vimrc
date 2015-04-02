@@ -17,11 +17,10 @@ set hidden                      " allowed unsaved buffers to go into background
 
 " -- Display --
 set background=light
-colorscheme solarized
-set guifont=Menlo\ Regular:h14
-set lsp=1                       " set a bit extra linespace for readability
-syntax enable                   " of course we want syntax highlighting
-filetype plugin indent on       " load file type plugins + indentation
+colorscheme barelyhear
+set guifont=Menlo:h12
+syntax enable                         " of course we want syntax highlighting
+filetype plugin indent on             " load file type plugins + indentation
 set lazyredraw
 
 " -- MacVim --
