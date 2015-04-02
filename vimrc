@@ -127,6 +127,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 highlight Pmenu ctermbg=238 gui=bold
+let loaded_matchparen = 1 " turn off matchparen for speed
 
 set backupdir=~/.vimtmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vimtmp,~/.tmp,~/tmp,/var/tmp,/tmp
