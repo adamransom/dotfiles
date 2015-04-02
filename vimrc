@@ -24,6 +24,8 @@ filetype plugin indent on             " load file type plugins + indentation
 set lazyredraw
 set nocursorline
 
+nmap <silent> ,qq :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
 " -- MacVim --
 set guioptions=ac               " hide menu
 
