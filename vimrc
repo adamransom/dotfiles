@@ -62,6 +62,7 @@ set smartcase                   " ... unless they contain at least one capital l
 highlight MatchParen cterm=bold ctermbg=none ctermfg=red
 "highlight StatusLine cterm=none
 "highlight StatusLineNC cterm=none
+let g:cpp_class_scope_highlight = 1
 
 " -- Mappings --
 let mapleader=","
@@ -106,8 +107,10 @@ endif
 nmap <silent> <Leader>t :CommandTFlush<CR>\|:CommandT<CR>
 nmap <silent> <Leader>gt :CommandTBuffer<CR>
 
-" -- XPTemplate --
-let g:xptemplate_key = '<Tab>'
+" -- UltiSnips --
+let g:UltiSnipsExpandTrigger = '<Tab>'
+let g:UltiSnipsJumpForwardTrigger = '<Tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 
 " -- Turbux --
 let g:no_turbux_mappings=1
@@ -129,7 +132,19 @@ highlight Pmenu ctermbg=238 gui=bold
 set backupdir=~/.vimtmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vimtmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
+nnoremap <silent> <Leader>cf :!~/cppformat %<CR>
+
 " -- Local Overrides
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
+" -- Global Functions
+
+function! Year()
+  return strftime("%Y")
+endfunction
+
+function! MyName()
+  return "Adam Ransom"
+endfunction

@@ -1,5 +1,6 @@
 zprezto
 vim/bundle/**
+vim/tags/**
 .vim/session*
 *.swp
 *.DS_STORE
