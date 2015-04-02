@@ -22,6 +22,7 @@ set guifont=Menlo:h12
 syntax enable                         " of course we want syntax highlighting
 filetype plugin indent on             " load file type plugins + indentation
 set lazyredraw
+set nocursorline
 
 " -- MacVim --
 set guioptions=ac               " hide menu
@@ -37,9 +38,6 @@ set stl+=Line:\ %l/%L[%p%%]\ Col:\ %c " Line and column numbers
 set stl+=\ Buf:\ #%n            " Buffer number
 set stl+=\ [%b][0x%B]           " ASCII and HEX character code
 set laststatus=2                " always show status line
-set cursorline
-autocmd WinEnter * setlocal cursorline
-autocmd WinLeave * setlocal nocursorline
 
 " -- Whitespace --
 set nowrap                                    " don't wrap lines
