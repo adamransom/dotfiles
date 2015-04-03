@@ -6,7 +6,7 @@ FG_RED="\033[31m"
 RESET="\033[0m"
 
 #task :default => [:unfinished]
-task :default => [:install_zsh, :install_tmux, :install_vim, :install_git, :submodules]
+task :default => [:submodules, :install_zsh, :install_tmux, :install_vim, :install_git]
 
 task :unfinished do |t|
   puts "#{red('✘')} Still a work-in-progress. Come back later..."
@@ -15,7 +15,6 @@ end
 task :install_zsh do |t|
   part = 'zsh'
   if confirm?(part)
-    system(%Q{git clone --recursive git@github.com:sorin-ionescu/prezto.git zprezto})
     install_files(%w[zprezto zshrc zshenv zpreztorc])
     system %Q{ln -s "$PWD/prezto_theme" "$PWD/zprezto/modules/prompt/functions/prompt_adam_setup"}
   end
@@ -44,7 +43,7 @@ end
 
 task :submodules do |t|
   puts "Initializing and updating submodules (this may take some time)..."
-  if system(%Q{git submodule update --init})
+  if system(%Q{git submodule update --init --recursive})
     puts "#{green('✔')} Initialised submodules"
   else
     puts "#{red('✘')} Failed to initialise submodules"
