@@ -20,5 +20,13 @@ Plugin 'godlygeek/tabular'
 Plugin 'SirVer/ultisnips'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'derekwyatt/vim-fswitch'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'JamshedVesuna/vim-markdown-preview'
+Plugin 'othree/html5.vim'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'gre/play2vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'lumiliet/vim-twig'
 
 call vundle#end()
