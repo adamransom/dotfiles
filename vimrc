@@ -48,7 +48,7 @@ set expandtab                                 " use spaces, not tabs
 set backspace=indent,eol,start                " backspace through everything in insert mode
 
 " -- Invisible Characters --
-set listchars=tab:»\ ,trail:⋅
+set listchars=nbsp:¬,tab:»\ ,trail:⋅
 set showbreak=↪
 
 " -- Searching --
