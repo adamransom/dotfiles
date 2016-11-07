@@ -111,6 +111,7 @@ if &term =~ "screen"
 endif
 nmap <silent> <Leader>t :CommandT<CR>
 nmap <silent> <Leader>gt :CommandTBuffer<CR>
+let g:CommandTWildIgnore=&wildignore . ",node_modules/**"
 
 " -- UltiSnips --
 let g:UltiSnipsExpandTrigger = '<Tab>'
