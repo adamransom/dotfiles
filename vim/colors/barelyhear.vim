@@ -62,6 +62,11 @@ hi link htmlTagName Statement
 hi link htmlLink Normal
 hi link javaScript Normal
 
+" -- xml syntax --
+hi link xmlEndTag Statement
+hi link xmlTag Statement
+hi link xmlTagName Statement
+
 " -- yaml syntax --
 hi link yamlKeyValueDelimiter SpecialSimple
 
