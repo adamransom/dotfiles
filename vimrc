@@ -147,3 +147,8 @@ endfunction
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
+" -- Enable project specific settings
+if filereadable(expand(".pvimrc"))
+  source .pvimrc
+endif
