@@ -82,6 +82,8 @@ noremap <Leader>v :e $MYVIMRC<CR>
 
 " Clear hlsearch with Enter
 nnoremap <silent> <Enter> :nohlsearch<CR>
+" Let Enter still work in quickfix list
+autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 " Substitute currently selected word
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 " Easy buffer switch
