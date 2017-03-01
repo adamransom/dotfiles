@@ -1,5 +1,6 @@
-vim/bundle/**
-vim/tags/**
+vim/bundle
+vim/tags
+vim/spell
 .vim/session*
 *.swp
 *.DS_STORE

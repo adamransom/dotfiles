@@ -1,108 +1,135 @@
 set nocompatible " choose no compatibility with legacy vi
-filetype off     " required for Vundle
 
-if filereadable(expand("~/.vim/Vundlefile"))
-  source ~/.vim/Vundlefile
+if filereadable(expand("~/.vim/Plugfile"))
+  source ~/.vim/Plugfile
 endif
 
 runtime macros/matchit.vim
 
-" -- General --
-set showcmd                     " display incomplete commands
-set autoread                    " automatically reload a file when its changed outside vim
-set encoding=utf-8
-set vb                          " set visual bell
-let g:loaded_netrwPlugin = 1    " stop loading directory browser
-set hidden                      " allowed unsaved buffers to go into background
+" Load indentation and syntax highlighting
+filetype plugin indent on
+syntax enable
 
-" -- Display --
+let mapleader=","               " Mappings are in .vim/plugin/mappings.vim
+
+" --- General --- {{{
+if has('cmdline_info')
+  set showcmd                   " display incomplete commands
+endif
+set autoread                    " automatically reload a file when its changed outside vim
+if has('multi_byte')
+  set encoding=utf-8
+  set ambiwidth=double
+endif
+if v:version > 704 || v:version == 704 && has('patch793')
+  set belloff=all               " no bells please
+endif
+set hidden                      " allowed unsaved buffers to go into background
+" --- }}}
+
+" --- Display --- {{{
 set background=light
-colorscheme barelyhear
-set guifont=Menlo:h12
-syntax enable                         " of course we want syntax highlighting
-filetype plugin indent on             " load file type plugins + indentation
+colorscheme therapy
 set lazyredraw
 set nocursorline
+if has('syntax')
+  set number                 " show line numbers
+  set spellcapcheck=         " don't check for capital letters at start of sentence
+  set spelllang=en_gb        " use British English when spell checking
+endif
+set scrolloff=3              " start scrolling 3 lines before edge of viewport
+set sidescrolloff=3          " same as above, but for horizontal scrolling
+let loaded_matchparen=1      " turn off matchparen for speed
+let g:netrw_altfile=1        " stop netrw from becoming the altfile (interferes with <C-^>)
+" --- }}}
 
-nmap <silent> ,qq :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+" --- Splits --- {{{
+if has('windows')
+  set splitbelow              " open horizontal splits below current window
+endif
+if has('vertsplit')
+  set splitright              " open vertical splits to the right of the current window
+endif
+" --- }}}
 
-" -- MacVim --
+" --- GUI --- {{{
 set guioptions=ac               " hide menu
+set guifont=DejaVu\ Sans\ Mono\ 11
+" --- }}}
 
-" -- Command & Status
+" --- Command & Status --- {{{
 set ch=2                        " Make command line two lines high
-set stl=%{&readonly?'✘\ ':''}   " Lock symbol if read only
+set stl=%r\                     " Lock symbol if read only
 set stl+=%{expand('%:.')}       " Full filepath
 set stl+=%(\ %m%)               " Unsaved changes or not
 set stl+=\ [%{strlen(&ft)?&ft:'none'},\ %{strlen(&fenc)?&fenc:&enc}] " Filetype and encoding
 set stl+=%=                     " Send the rest to the right
-set stl+=Line:\ %l/%L[%p%%]\ Col:\ %c " Line and column numbers
-set stl+=\ Buf:\ #%n            " Buffer number
+set stl+=%l/%L\:%c              " Line and column numbers
 set stl+=\ [%b][0x%B]           " ASCII and HEX character code
 set laststatus=2                " always show status line
+" --- }}}
 
-" -- Whitespace --
+" --- Whitespace --- {{{
 set nowrap                                    " don't wrap lines
 set tabstop=2 shiftwidth=2 softtabstop=2      " a tab is two spaces
 set expandtab                                 " use spaces, not tabs
 set backspace=indent,eol,start                " backspace through everything in insert mode
+set smarttab
+if v:version > 703 || v:version == 703 && has('patch541')
+  set formatoptions+=j                        " remove comment leader when joining comment lines
+endif
+set formatoptions+=j                          " smart auto-indenting with numbered lists
+set nojoinspaces                              " don't add two spaces when joining on '.', '!' and '?'
+if has('virtualedit')
+  set virtualedit=block                       " allow cursor to move where there is no text in visual block mode
+endif
+" --- }}}
 
-" -- Invisible Characters --
+" --- Invisible Characters --- {{{
 set listchars=nbsp:¬,tab:»\ ,trail:⋅
 set showbreak=↪
+" --- }}}
 
-" -- Searching --
-set hlsearch                    " highlight matches
-set incsearch                   " incremental searching
+" --- Folds --- {{{
+if has('folding')
+  set foldlevelstart=99               " start unfolded
+  set foldmethod=indent               " not as cool as syntax, but faster
+endif
+" --- }}}
+
+" --- Searching --- {{{
+if has('extra_search')
+  set hlsearch                  " highlight matches
+  set incsearch                 " incremental searching
+endif
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
+" --- }}}
 
-set complete=.,w,b,t
-set number
-set ambiwidth=double
+" --- Autocompletion --- {{{
+set complete=.,w,b,u,t,i
+if has('insert_expand')
+  set completeopt=menu,preview
+endif
+" --- }}}
 
-set wildignore+=tmp/**
-set wildignore+=**/.git/*
-set wildignore+=*.xcodeproj/*
-set wildignore+=*.xcworkspace/*
+" --- Wildignore --- {{{
+if has('wildignore')
+  set wildignore+=tmp/**
+  set wildignore+=**/.git/*
+  set wildignore+=*.xcodeproj/*
+  set wildignore+=*.xcworkspace/*
+endif
+if has('wildmenu')
+  set wildmenu                        " show options as list when switching buffers etc
+endif
+set wildmode=longest:full,full        " shell-like autocomplete to unambiguous portion
+" --- }}}
 
-" -- Customize Colors --
-highlight MatchParen gui=bold guibg=NONE guifg=red cterm=bold ctermbg=NONE ctermfg=red
-let g:cpp_class_scope_highlight = 1
+set backupdir=~/.vimtmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vimtmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
-" -- Mappings --
-let mapleader=","
-
-" -- .vimrc --
-augroup AutoReloadVimRC
-  au!
-  au BufWritePost $MYVIMRC so $MYVIMRC
-augroup END
-noremap <Leader>v :e $MYVIMRC<CR>
-
-" Clear hlsearch with Enter
-nnoremap <silent> <Enter> :nohlsearch<CR>
-" Let Enter still work in quickfix list
-autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
-" Substitute currently selected word
-nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
-" Easy buffer switch
-noremap <Leader><Leader> <C-^>
-" Make Y behave as you would expect
-map Y y$
-" Smash escape
-inoremap jj <Esc>`^
-inoremap jk <Esc>`^
-" Easy to a edit file in same directory
-cabbr <expr> %% expand('%:p:h%')
-" Insert a hash rocket with <c-l>
-imap <c-l> <space>=><space>
-" Toggle invisible characters
-nnoremap <silent> <Leader>l :set list!<CR>
-" Quickly duplicate line
-nnoremap <C-j> yyp
-
-" -- CommandT --
+" --- CommandT --- {{{
 let g:CommandTMaxHeight=5
 if &term =~ "screen"
   let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
@@ -112,29 +139,15 @@ endif
 nmap <silent> <Leader>t :CommandT<CR>
 nmap <silent> <Leader>gt :CommandTBuffer<CR>
 let g:CommandTWildIgnore=&wildignore . ",node_modules/**"
+" --- }}}
 
-" -- UltiSnips --
+" --- UltiSnips --- {{{
 let g:UltiSnipsExpandTrigger = '<Tab>'
 let g:UltiSnipsJumpForwardTrigger = '<Tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
+" --- }}}
 
-" -- Turbux --
-let g:no_turbux_mappings=1
-nmap <Leader>r <Plug>SendTestToTmux
-nmap <Leader>R <Plug>SendFocusedTestToTmux
-
-" -- Java --
-let java_highlight_functions="style"
-
-let loaded_matchparen = 1 " turn off matchparen for speed
-
-set backupdir=~/.vimtmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vimtmp,~/.tmp,~/tmp,/var/tmp,/tmp
-
-nnoremap <silent> <Leader>cf :!~/cppformat %<CR>
-
-" -- Global Functions
-
+" --- Global Functions --- {{{
 function! Year()
   return strftime("%Y")
 endfunction
@@ -142,13 +155,16 @@ endfunction
 function! MyName()
   return "Adam Ransom"
 endfunction
+" --- }}}
 
-" -- Local Overrides
+" --- Local Overrides --- {{{
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
-" -- Enable project specific settings
 if filereadable(expand(".pvimrc"))
   source .pvimrc
 endif
+" --- }}}
+
+" vim: foldmethod=marker foldlevel=0
