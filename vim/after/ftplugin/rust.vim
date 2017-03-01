@@ -9,3 +9,4 @@ nnoremap <buffer> <Leader>e :make test<CR>:copen<CR>
 " Easy jumping to definitions
 nmap <buffer> gd <Plug>(rust-def)
 nmap <buffer> gx <Plug>(rust-def-vertical)
+nmap <buffer> gc <Plug>(rust-doc)
