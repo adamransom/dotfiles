@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-RUBY_VERSION="2.1.0"
+RUBY_VERSION="2.5.3"
 
 verbose=0
 

@@ -16,6 +16,7 @@ nnoremap <silent> ,qq :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name"
 nnoremap <Leader><Leader> <C-^>
 " Trying FZF...
 nnoremap <silent> <Leader>t :Files<CR>
+nnoremap <silent> <Leader>gt :Buffers<CR>
 " Clear hlsearch with Enter
 nnoremap <silent> <Enter> :nohlsearch<CR>
 " Let Enter still work in quickfix list
@@ -33,7 +34,11 @@ nnoremap <Leader>p o<ESC>V"+p
 nnoremap <Leader>P O<ESC>V"+p
 " Open current file directory with netrw for easy switching
 nnoremap <silent> - :silent edit <C-R>=empty(expand('%')) ? '.' : fnameescape(expand('%:p:h'))<CR><CR>
-
+" Quickfix navigation
+nnoremap <silent> ]] :cn<CR>
+nnoremap <silent> [[ :cp<CR>
+" Better terminal handling
+tnoremap <C-j> <C-\><C-n>
 " --- }}}
 
 " --- Insert Mappings --- {{{
@@ -70,6 +75,23 @@ cnoremap <C-p>          <Up>
 " Save with sudo
 cnoremap w!! w !sudo tee > /dev/null "%"
 
+" --- }}}
+
+" --- Language Server --- {{{
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+" --- }}}
+
+" --- Testing --- {{{
+nnoremap <Leader>rr :w \| TestFile<CR>
+nnoremap <Leader>re :w \| TestNearest<CR>
+nnoremap <Leader>ra :w \| TestSuite<CR>
+nnoremap <Leader>rw :w \| TestLast<CR>
+" --- }}}
+
+" --- neosnippet --- {{{
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
 " --- }}}
 
 " vim: foldmethod=marker foldlevel=0

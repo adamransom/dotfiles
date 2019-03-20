@@ -1,5 +1,7 @@
 set nocompatible " choose no compatibility with legacy vi
 
+filetype off
+
 if filereadable(expand("~/.vim/Plugfile"))
   source ~/.vim/Plugfile
 endif
@@ -17,7 +19,7 @@ if has('cmdline_info')
   set showcmd                   " display incomplete commands
 endif
 set autoread                    " automatically reload a file when its changed outside vim
-if has('multi_byte')
+if !has('nvim') && has('multi_byte')
   set encoding=utf-8
   set ambiwidth=double
 endif
@@ -107,9 +109,15 @@ set smartcase                   " ... unless they contain at least one capital l
 " --- }}}
 
 " --- Autocompletion --- {{{
-set complete=.,w,b,u,t,i
+set complete=.,w,b,u,i
 if has('insert_expand')
   set completeopt=menu,preview
+endif
+
+if has('nvim')
+  let g:deoplete#enable_at_startup = 1
+else
+  call neocomplete#custom#source('tag', 'disabled', 1)
 endif
 " --- }}}
 
@@ -129,23 +137,18 @@ set wildmode=longest:full,full        " shell-like autocomplete to unambiguous p
 set backupdir=~/.vimtmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vimtmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
-" --- CommandT --- {{{
-let g:CommandTMaxHeight=5
-if &term =~ "screen"
-  let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
-  let g:CommandTSelectNextMap = ['<Esc>OB']
-  let g:CommandTSelectPrevMap = ['<Esc>OA']
-endif
-nmap <silent> <Leader>t :CommandT<CR>
-nmap <silent> <Leader>gt :CommandTBuffer<CR>
-let g:CommandTWildIgnore=&wildignore . ",node_modules/**"
-" --- }}}
-
 " --- UltiSnips --- {{{
 let g:UltiSnipsExpandTrigger = '<Tab>'
 let g:UltiSnipsJumpForwardTrigger = '<Tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 " --- }}}
+
+" --- neosnippet --- {{{
+let g:neosnippet#snippets_directory = '~/.vim/snippets'
+let g:neosnippet#disable_runtime_snippets = {
+		\   '_' : 1,
+		\ }
+" ---}}}
 
 " --- Global Functions --- {{{
 function! Year()
@@ -155,6 +158,17 @@ endfunction
 function! MyName()
   return "Adam Ransom"
 endfunction
+" --- }}}
+
+" --- Ale --- {{{
+let g:ale_linters_explicit = 1
+" --- }}}
+
+" --- LSP --- {{{
+let g:LanguageClient_autoStop = 0
+let g:LanguageClient_serverCommands = {
+    \ 'ruby': ['tcp://localhost:7658']
+    \ }
 " --- }}}
 
 " --- Local Overrides --- {{{

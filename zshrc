@@ -1,3 +1,20 @@
+# Mac OS X uses path_helper and /etc/paths.d to preload PATH, clear it out first
+if [ -x /usr/libexec/path_helper ]; then
+  export PATH=''
+  eval `/usr/libexec/path_helper -s`
+fi
+
+export PATH="/usr/local/bin:$PATH"
+
+# if rbenv is present, configure it for use
+if which rbenv &> /dev/null; then
+  # put the rbenv entry at the front of the line
+  export PATH="$HOME/.rbenv/bin:$PATH"
+
+  # enable shims and auto-completion
+  eval "$(rbenv init -)"
+fi
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -13,6 +30,8 @@ alias l="la" # overwrite prezto default
 # Git Aliases
 alias gs="git status" # overwrite prezto default
 alias gl="git l" # overwrite prezto default
+alias glm="gl master.."
+alias gri="git rebase -i --autosquash master"
 
 # Exports
 export LSCOLORS=exfxcxdxbxegedabagacad

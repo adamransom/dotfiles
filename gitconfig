@@ -12,3 +12,10 @@
 
 [merge]
     tool = vimdiff
+[user]
+	name = Adam Ransom
+	email = v0id.gmr@gmail.com
+[core]
+	excludesfile = /Users/adam/.gitignore_global
+[url "git@github.com:"]
+	insteadOf = https://github.com/
