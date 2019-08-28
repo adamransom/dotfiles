@@ -23,7 +23,7 @@ fi
 # General Aliases
 alias v="mvim -v"
 alias g="mvim --remote-silent"
-alias zc="$EDITOR $HOME/.zshrc"
+alias ze="$EDITOR $HOME/.zshrc"
 alias zs="source $HOME/.zshrc"
 alias l="la" # overwrite prezto default
 
