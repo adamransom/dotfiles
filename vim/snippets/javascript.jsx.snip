@@ -1,0 +1,26 @@
+snippet it
+abbr it("...") do
+  it("${1}", () => {
+    ${0}
+  });
+
+snippet describe
+abbr describe("...") do
+  describe("${1}", () => {
+    ${0}
+  });
+
+snippet react
+abbr React component using Hooks
+  import React, { useState } from "react";
+  import PropTypes from "prop-types";
+
+  const ${1} = (${2}) => {
+    ${0}
+  };
+
+  $1.propTypes = {
+    ${3}
+  };
+
+  export default $1;

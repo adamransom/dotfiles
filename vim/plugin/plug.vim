@@ -1,44 +1,35 @@
 call plug#begin('~/.vim/bundle')
 
 " --- General Plugins {{{
-Plug 'adamransom/therapy'
-Plug 'beloglazov/vim-textobj-quotes'
-Plug 'itmammoth/doorboy.vim'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf.vim'
-Plug 'kana/vim-textobj-user'
 Plug 'shougo/neosnippet.vim'
 Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
-Plug 'vim-scripts/bufkill.vim'
 Plug 'vim-scripts/camelcasemotion'
 Plug 'w0rp/ale'
 
 if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
-else
-  Plug 'shougo/neocomplete.vim'
 endif
 " --- }}}
 
 " --- CPP Plugins {{{
-Plug 'derekwyatt/vim-fswitch', { 'for': 'cpp' }
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
 " --- }}}
 
 " --- CSS Plugins {{{
 Plug 'cakebaker/scss-syntax.vim'
-Plug 'hail2u/vim-css3-syntax'
+Plug 'JulesWang/css.vim'
 " --- }}}
 
 " --- HTML-related Plugins {{{
-Plug 'juvenn/mustache.vim'
-Plug 'lumiliet/vim-twig'
 Plug 'othree/html5.vim'
 " --- }}}
 
@@ -49,16 +40,13 @@ Plug 'pangloss/vim-javascript'
 
 " --- Java Plugins {{{
 Plug 'derekwyatt/vim-scala'
-Plug 'gre/play2vim', { 'for': 'java' }
 " --- }}}
 
 " --- Ruby Plugins {{{
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
-Plug 'vim-scripts/ruby-matchit', { 'for': 'ruby' }
 " --- }}}
 
 " --- Rust Plugins {{{
-Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 Plug 'rust-lang/rust.vim'
 " --- }}}
 
