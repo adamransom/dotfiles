@@ -32,6 +32,8 @@ alias gs="git status" # overwrite prezto default
 alias gl="git l" # overwrite prezto default
 alias glm="gl master.."
 alias gri="git rebase -i --autosquash master"
+alias gsw="git switch"
+alias gsc="git switch -c"
 
 # Exports
 export LSCOLORS=exfxcxdxbxegedabagacad
