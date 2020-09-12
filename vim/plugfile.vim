@@ -3,12 +3,15 @@ call plug#begin('~/.vim/bundle')
 " --- General Plugins {{{
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf.vim'
+Plug 'justinmk/vim-dirvish'
 Plug 'shougo/neosnippet.vim'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/camelcasemotion'
 Plug 'w0rp/ale'
 
