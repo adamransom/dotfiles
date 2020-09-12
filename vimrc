@@ -1,7 +1,7 @@
 filetype off
 
-if filereadable(expand("~/.vim/plugin/plug.vim"))
-  source ~/.vim/plugin/plug.vim
+if filereadable(expand("~/.vim/plugfile.vim"))
+  source ~/.vim/plugfile.vim
 endif
 
 " Load indentation and syntax highlighting
