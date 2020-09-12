@@ -41,5 +41,8 @@ export LSCOLORS=exfxcxdxbxegedabagacad
 # Options
 unsetopt CORRECT # no autocorrect thanks
 
+PATH=".git/safe/../../node_modules/.bin:$PATH"
+PATH=".git/safe/../../bin:$PATH"
+
 # Load local configurations
 test -f $HOME/.zshrc.local && source $HOME/.zshrc.local
