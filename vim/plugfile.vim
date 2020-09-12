@@ -16,10 +16,7 @@ Plug 'vim-scripts/camelcasemotion'
 Plug 'w0rp/ale'
 
 if has('nvim')
-  Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+  Plug 'neovim/nvim-lspconfig'
 endif
 " --- }}}
 
