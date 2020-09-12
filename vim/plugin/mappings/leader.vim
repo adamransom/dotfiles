@@ -3,6 +3,7 @@ nnoremap <Leader><Leader> <C-^>
 " Easy vimrc editing
 nnoremap <silent> <Leader>ve :e $MYVIMRC<CR>
 nnoremap <silent> <Leader>vp :e ~/.vim/plugin/plug.vim<CR>
+nnoremap <silent> <Leader>vm :e ~/.vim/plugin/mappings<CR>
 " Quickly edit file at same path as current file
 nnoremap <Leader>ce :e <C-R>=expand('%:p:h')<CR>/
 " Display the syntax highlighting of the current word

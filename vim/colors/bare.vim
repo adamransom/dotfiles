@@ -18,7 +18,7 @@ let s:black = "#000000"
 
 let s:red = "#c62828"
 let s:blue = "#4527a0"
-let s:green = "#608050"
+let s:green = "#86b200"
 
 function! s:hi(group, ...)
   let l:fg = get(a:, 1, s:none)
@@ -76,6 +76,8 @@ if &background == "light"
   call s:hi('Search', s:black, s:none, 'bold')
   call s:hi('Todo', s:red)
   call s:hi('Link', s:blue)
+  call s:hi('SpecialKey', s:blue)
+  call s:hi('MatchParen', s:blue, s:light_gray, 'bold')
 
   call s:hi('diffRemoved', s:red)
   call s:hi('diffAdded', s:green)
