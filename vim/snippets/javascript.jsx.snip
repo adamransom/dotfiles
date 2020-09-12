@@ -12,7 +12,7 @@ abbr describe("...") do
 
 snippet react
 abbr React component using Hooks
-  import React, { useState } from "react";
+  import React from "react";
   import PropTypes from "prop-types";
 
   const ${1} = (${2}) => {
@@ -24,3 +24,14 @@ abbr React component using Hooks
   };
 
   export default $1;
+
+snippet spec
+abbr React Testing Library spec
+  import React from "react";
+  import { render } from "spec/javascript/support/react-testing-library";
+
+  import ${1} from "${2}";
+
+  describe("$1", () => {
+    ${0}
+  });
