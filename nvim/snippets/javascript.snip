@@ -1,0 +1,64 @@
+snippet fn
+abbr ... = (...) => { ... }
+  ${1} = (${2}) => {
+    ${0}
+  };
+
+snippet it
+abbr it("...") do
+  it("${1}", () => {
+    ${0}
+  });
+
+snippet describe
+abbr describe("...") do
+  describe("${1}", () => {
+    ${0}
+  });
+
+snippet react
+abbr React component using Hooks
+  import PropTypes from "prop-types";
+
+  const ${1:`substitute(expand("%:t"), '\v(\w+)(-|\.\w+)', '\u\1', 'g')`} = (${2}) => {
+    ${0}
+  };
+
+  $1.propTypes = {
+    ${3}
+  };
+
+  export default $1;
+
+
+snippet spec
+abbr React Testing Library spec
+  import { render } from "spec/javascript/support/react-testing-library";
+
+  import ${1:`substitute(expand("%:t"), '\v(\w+)(-|\.test\.js)', '\u\1', 'g')`} from "${2:`substitute(expand("%"), '\vspec/javascript/(.+)\.test\.js', '\1', 'g')`}";
+
+  describe("$1", () => {
+    ${0}
+  });
+
+snippet log
+abbr console.log(...)
+  console.log(${1:TARGET})
+
+snippet story
+abbr Storybook story
+  import ${1:`substitute(expand("%:t"), '\v(\w+)(-|\.stories\.js)', '\u\1', 'g')`} from "./${2:`substitute(expand("%:t"), '.stories.js', '', 'g')`}";
+
+  export default {
+    component: $1,
+    title: "${0}",
+    parameters: {
+      materialUi: true,
+      layout: "fullscreen",
+    },
+  };
+
+  export const Default = {
+    render: (args) => <$1 {...args} />,
+    name: "$1",
+  };

@@ -1,10 +1,8 @@
 dotfiles
 -----------
-My simple dotfiles collection to ease setup on a new machine. Primarily for myself, but feel to fork or just have a look around.
+Just the dotfiles I use (mainly for work). Some bits haven't been updated in a
+while, but the neovim config is relatively up-to-date. Some useful links:
 
-1. If its a brand new machine, run `./bootstrap_osx` in order to install things like Homebrew, the latest Ruby etc.
-2. Next (or first if you only want the dotfiles), run `./install`
-
-That should be all you need to do!
-
-*NOTE: You might need to set iTerm to report the terminal as xterm-256colors in order to get colors to display correctly (especially in console Vim)*
+- [neovim](https://neovim.io/)
+- [kitty](https://sw.kovidgoyal.net/kitty/)
+- [JetBrains Mono](https://www.jetbrains.com/lp/mono/)

@@ -14,8 +14,10 @@
     tool = vimdiff
 [user]
 	name = Adam Ransom
-	email = v0id.gmr@gmail.com
+	email = 1046872+adamransom@users.noreply.github.com
 [core]
 	excludesfile = /Users/adam/.gitignore_global
-[url "git@github.com:"]
-	insteadOf = https://github.com/
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
+[fetch]
+	prune = true

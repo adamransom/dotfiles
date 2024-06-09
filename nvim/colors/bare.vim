@@ -1,4 +1,5 @@
 hi clear
+runtime colors/vim.lua
 
 if exists("syntax_on")
   syntax reset
@@ -24,10 +25,12 @@ function! s:hi(group, ...)
   let l:fg = get(a:, 1, s:none)
   let l:bg = get(a:, 2, s:none)
   let l:gui = get(a:, 3, 'none')
+  let l:guisp = get(a:, 4, s:none)
 
   exe 'hi' a:group
     \ ' guifg=' l:fg 'guibg=' l:bg 'gui=' l:gui
     \ 'term=' l:gui 'cterm=' l:gui
+    \ 'guisp=' l:guisp
 endfunction
 
 if &background == "light"
@@ -41,6 +44,8 @@ if &background == "light"
   hi! link Statement Normal
   hi! link Type Normal
   hi! link Directory Normal
+  hi! link Function Normal
+  hi! link Operator Normal
 
   " Secondary
   call s:hi('Comment', s:dark_gray)
@@ -51,13 +56,20 @@ if &background == "light"
   " Error
   call s:hi('Error', s:red, s:none, 'bold')
   call s:hi('ErrorMsg', s:red, s:none, 'bold')
+  call s:hi('DiagnosticError', s:red, s:none)
+  call s:hi('DiagnosticUnderlineError', s:red, s:none, 'bold,undercurl', s:red)
+  call s:hi('DiagnosticUnderlineHint', s:dark_gray, s:none, 'bold,undercurl', s:dark_gray)
+  call s:hi('DiagnosticSignError', s:red, s:none, 'bold')
+  call s:hi('DiagnosticSignHint', s:dark_gray, s:none, 'bold')
 
   hi! link SpellBad Error
   hi! link SpellCap Error
   hi! link WarningMsg ErrorMsg
+  hi! link DiagnosticHint Comment
 
   " UI
-  call s:hi('VertSplit', s:gray, s:gray)
+  call s:hi('Visual', s:none, s:gray)
+  call s:hi('WinSeparator', s:gray, s:gray)
   call s:hi('StatusLine', s:darker_gray, s:gray)
   call s:hi('StatusLineNC', s:dark_gray, s:gray)
   call s:hi('User1', s:darker_gray, s:gray, 'bold')
@@ -83,13 +95,11 @@ if &background == "light"
   call s:hi('diffAdded', s:green)
 end
 
-" Ale
-hi! link ALEWarningSign Error
-hi! link ALEErrorSign Error
-
 " Git
 hi! link gitCommitOverflow Comment
 
 " Vim
 hi! link helpHyperTextJump Link
 hi! link helpOption Link
+
+hi! rubyMethodName term=bold gui=bold cterm=bold
