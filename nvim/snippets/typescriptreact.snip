@@ -1,0 +1,53 @@
+snippet react
+abbr React component using Hooks
+  type Props = {};
+
+  const ${1:`substitute(expand("%:t"), '\v(\w+)(-|\.\w+)', '\u\1', 'g')`} = (${2}: Props) => {
+    ${0}
+  };
+
+  export default $1;
+
+snippet story
+abbr Storybook story
+  import type { Meta, StoryObj } from "@storybook/react";
+
+  import ${1:`substitute(expand("%:t"), '\v(\w+)(-|\.stories\.tsx)', '\u\1', 'g')`} from "./${2:`substitute(expand("%:t"), '.stories.tsx', '', 'g')`}";
+
+  const meta = {
+    component: $1,
+    title: "${0}",
+    parameters: {
+      materialUi: true,
+      layout: "fullscreen",
+    },
+    args: {},
+  } satisfies Meta<typeof $1>;
+
+  export const Default = {
+    name: "$1",
+  } satisfies StoryObj<typeof meta>;
+
+  export default meta;
+
+snippet spec
+abbr React Testing Library spec
+  import { render } from "spec/javascript/support/react-testing-library";
+
+  import ${1:`substitute(expand("%:t"), '\v(\w+)(-|\.test\.tsx?)', '\u\1', 'g')`} from "${2:`substitute(expand("%"), '\vspec/javascript/(.+)\.test\.tsx?', '\1', 'g')`}";
+
+  describe("$1", () => {
+    ${0}
+  });
+
+snippet it
+abbr it("...") do
+  it("${1}", () => {
+    ${0}
+  });
+
+snippet describe
+abbr describe("...") do
+  describe("${1}", () => {
+    ${0}
+  });

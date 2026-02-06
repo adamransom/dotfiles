@@ -1,0 +1,21 @@
+snippet spec
+abbr React Testing Library spec
+  import { render } from "spec/javascript/support/react-testing-library";
+
+  import ${1:`substitute(expand("%:t"), '\v(\w+)(-|\.test\.tsx?)', '\u\1', 'g')`} from "${2:`substitute(expand("%"), '\vspec/javascript/(.+)\.test\.tsx?', '\1', 'g')`}";
+
+  describe("$1", () => {
+    ${0}
+  });
+
+snippet it
+abbr it("...") do
+  it("${1}", () => {
+    ${0}
+  });
+
+snippet describe
+abbr describe("...") do
+  describe("${1}", () => {
+    ${0}
+  });

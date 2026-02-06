@@ -1,5 +1,8 @@
 vim.cmd("colorscheme bare")
 
+vim.g.copilot_node_command = "~/.asdf/installs/nodejs/22.12.0/bin/node"
+
+
 -- Settings {{{
 vim.g.mapleader = ","
 
@@ -102,7 +105,6 @@ require("paq") {
   "junegunn/fzf",
   "junegunn/fzf.vim",
   "justinmk/vim-dirvish",
-  "madox2/vim-ai",
   "maxmellon/vim-jsx-pretty",
   "neovim/nvim-lspconfig",
   "ojroques/nvim-lspfuzzy",
@@ -160,14 +162,16 @@ vim.keymap.set("x", "<TAB>", "<Plug>(neosnippet_expand_target)")
 -- lsp {{{
 local lsp = require("lspconfig")
 
-lsp.solargraph.setup({})
-lsp.tsserver.setup({
+lsp.solargraph.setup({
+  cmd = { 'bundle', 'exec', 'solargraph', 'stdio' }
+})
+lsp.ts_ls.setup({
   on_attach = function(client, bufnr)
     client.server_capabilities.semanticTokensProvider = nil
   end,
-  handlers = {
-    ["textDocument/publishDiagnostics"] = function() end,
-  },
+  -- handlers = {
+  --   ["textDocument/publishDiagnostics"] = function() end,
+  -- },
 })
 lsp.eslint.setup({
   on_attach = function(client, bufnr)
@@ -219,14 +223,8 @@ vim.keymap.set("i", "<C-J>", "copilot#Accept('<CR>')", {
 
 vim.keymap.set("i", "<C-]>", "<Plug>(copilot-accept-word)")
 vim.g.copilot_no_tab_map = true
--- }}}
-
--- vim-ai {{{
-vim.g.vim_ai_edit = {
-  ui = {
-    paste_mode = 0,
-  },
-}
+vim.g.copilot_settings = { selectedCompletionModel = 'gpt-41-copilot' }
+vim.g.copilot_integration_id = 'vscode-chat'
 -- }}}
 
 if vim.fn.filereadable(vim.fn.expand(".pvimrc")) == 1 then

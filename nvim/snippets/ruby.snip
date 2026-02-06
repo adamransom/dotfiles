@@ -1,42 +1,32 @@
 snippet it
-abbr it '...' do
-  it '${1}' do
+abbr it "..." do
+  it "${1}" do
     ${0}
   end
 
 snippet describe
-abbr describe '...' do
-  describe '${1}' do
+abbr describe "..." do
+  describe "${1}" do
     ${0}
   end
 
 snippet scenario
-abbr scenario '...' do
-  scenario '${1}' do
+abbr scenario "..." do
+  scenario "${1}" do
     ${0}
   end
 
 snippet context
-abbr context '...' do
-  context '${1}' do
+abbr context "..." do
+  context "${1}" do
     ${0:TARGET}
   end
 
 snippet rspec
 options head
-  require 'rails_helper'
-
   RSpec.describe ${1} do
     ${0}
   end
-
-snippet let
-abbr let(...) { ... }
-  let(${1}) { ${2} }${0}
-
-snippet subject
-abbr subject(...) { ... }
-  subject(${1}) { ${2:described_class.new} }${0}
 
 snippet do
 abbr ... do

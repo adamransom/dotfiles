@@ -23,7 +23,7 @@ alias gfm='$EDITOR $(git --no-pager diff --name-only --diff-filter=U)'
 alias grc="git rebase --continue"
 alias gap='git add -p'
 alias fixup="git --no-pager log --pretty='format:%h %s' master.. | fzf | cut -d' ' -f1 | xargs git commit --fixup"
-alias glc="git diff-tree --no-commit-id --name-only -r HEAD | fzf | xargs nvim --server /tmp/nvimsocket --remote"
+alias glc="git diff-tree --no-commit-id --name-only -r HEAD | fzf | xargs nvim --server /tmp/nvimsocket --remote-silent"
 
 # Exports
 export LSCOLORS=exfxcxdxbxegedabagacad
